@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+<div class="container px-5">
+  
+<a class="navbar-brand" routerLink="">New York Times &nbsp; | </a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav  ms-auto">
+    <li class="nav-item px-3"><a class="nav-link text-white" type="submit" routerLink="">Home</a></li>
+    <li class="nav-item px-3"><a class="nav-link text-white" routerLink="art">Arts</a></li>
+    <li class="nav-item px-3"><a class="nav-link text-white" routerLink="world">World</a></li>
+    <li class="nav-item px-3"><a class="nav-link text-white" routerLink="science">Science</a></li>
+    <li class="nav-item px-3"><a class="nav-link text-white" routerLink="us">US</a></li>
+  </ul>
+
+  <form class="form-inline my-2 my-lg-0" [formGroup]="searchForm" (submit)="submitForm()">
+    <input class="form-control"  formControlName="searchresult" type="text" placeholder="Search" aria-label="Search">
+    &nbsp; &nbsp;
+    
+    <!-- <input type="submit"  class="btn btn-outline-secondary my-2 my-sm-0 text-white" value="Search">
+  </form> -->
+  <a routerLink="searchresult" type="submit"  class="btn btn-outline-secondary my-2 my-sm-0 text-white" > Search</a>
+</form>
+
+</div>
+</div>
+</nav>
+
+<div class="container" *ngFor="let result of searchList">
+  <!-- <app-card [name]="product.name" [region]="product.region" [flag]="product.flag" [population] ="product.population.toString()" ></app-card>
+ 
+  <div ></div> -->
+<app-search-result [abstract]="result.abstract" [lead_paragraph]="result.lead_paragraph" [source]="result.source"></app-search-result>
+  
+</div>
+  
+

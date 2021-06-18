@@ -1,0 +1,17 @@
+<!-- Features section-->
+<section class="py-5 border-bottom" id="features">
+    <div class="container px-5 my-5">
+      <div class="row gx-5">
+  
+  
+        <div class="col-lg-4 card shadow p-3 mb-5" *ngFor="let result of artList">
+          <app-artcard [section]="result.section" [title]="result.title" [date]="result.created_date" [abstract]="result.abstract"
+            [byline]="result.byline" [src]="result.multimedia[0].url" [href]="result.url"></app-artcard>
+        </div>
+  
+  
+  
+      </div>
+    </div>
+  </section>
+  
